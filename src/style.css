@@ -1,0 +1,487 @@
+/* import google fonts */
+/*@import url('https:/ /fonts.googleapis.com/css2?family=PT+Serif&display=swap');*/
+@import url('https:/ /fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+:root {
+  --primary-background: #342c3b;
+  --secondary-background: #877397;
+  --primary: #904cc7;
+  --secondary:#2c6c69;
+}
+
+.caption {
+  font: 16px sans-serif;
+}
+
+.caption_lt {
+  font: 10px sans-serif;
+}
+.caption_hv {
+  font: bold 18px sans-serif;
+}
+
+.sidebar {  
+  position: absolute;
+  top: 60px;
+  left: -20vw;
+  height: 100%;  
+  width: 20vw;  
+  background-color: var(--secondary-background);
+  color: var(--primary);
+  transition: left 0.2s ease-in-out;
+  -webkit-transition: left 0.2s ease-in-out;
+  -moz-transition: left 0.2s ease-in-out;
+  -ms-transition: left 0.2s ease-in-out;
+  -o-transition: left 0.2s ease-in-out;
+}
+
+.sidebar.open {
+  left: 0;
+  min-width:100px;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 20%;
+  right: -10px;
+  height: 60px;
+  width: 10px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+/* 
+  ref Tiny CSS Projects 
+  cards in grid layout
+*/
+
+body {
+  /*background-color: #dbc4f1;*/
+  --page-background: linear-gradient(#342c3b, #dbc4f1);
+  background: var(--page-background);
+  --text-color: var(--primary);
+  color: var(--text-color);
+  /*font-family: 'PT Serif', serif;*/
+  font-family: 'Rubik Doodle Shadow', serif;
+
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+header > h1 {
+  text-transform: uppercase;
+  font: 450 60px 'Rubik', sans-serif;
+  background: url('./img/image02.jpg');
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+/*
+header > img {  
+  --primary: #91ec99;
+  background-image: radial-gradient(
+    circle at top,
+    var(--primary) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-size: 100px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+*/
+
+cardframe {
+  display: grid;
+  max-width: 1000px;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 500px) {
+  cardframe {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 755px) {
+  cardframe {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+cardframe > card {
+  --card-background: #1b3d70;
+  min-height: 150px;
+  background-size: cover;
+  background-color: var(--card-background);
+  border-radius: 4px;
+  /* shadow effect */
+  box-shadow: 0 0 55px rgba(38, 40, 45, 0.75);
+}
+
+cardframe > card > div {
+  background-color: rgba(0, 0, 0, 0.65);
+  margin: 1rem;
+  padding: 1rem;
+  color: whitesmoke;
+  text-align: center;
+  height: calc(100% - 4rem);
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  align-items: center;
+}
+
+card h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+card p {
+  font: italic 1.125rem 'Cardo', cursive;
+  line-height: 1.35;
+}
+
+card > div > a {
+  background-color: #018c9e;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+card > div > a:hover {
+  background-color: #02d4f0;
+}
+
+card > div > a:focus {
+  outline: 1px dashed #02d4f0;
+  outline-offset: 3px;
+}
+
+.poker_spade_ace {
+  background-image: url('./img/poker_sa01.jpg');
+}
+
+.meeru-island {
+  background-image: url('./img/image01.jpg');
+}
+.flamingo-beech {
+  background-image: url('./img/image02.jpg');
+}
+.protur-safari {
+  background-image: url('./img/image03.jpg');
+}
+.mountain-view {
+  background-image: url('4.jpg');
+}
+
+@media (hover: hover) and (min-width: 500px) and (prefers-reduced-motion: no-preference) {
+  card > div {
+    transform: translateY(calc(150px - 8rem));
+    height: 5rem;
+    overflow: hidden;
+  }
+  card > div > *:not(h2) {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* cart chapter */
+cart {
+  font-family: 'Raleway', sans-serif;
+  color: #171717;
+  font-variant-numeric: lining-nums;
+}
+
+cart h1,
+cart h2 {
+  color: #2c6c69;
+}
+
+cart button,
+cart .button {
+  background: none;
+  border-radius: 4px;
+  padding: 10px;
+  border: solid 1px #ddd;
+  text-decoration: none;
+}
+
+cart button:hover,
+.button:hover {
+  outline: dotted 1px #2c6c69;
+  outline-offset: 2px;
+}
+
+cart button:focus,
+.button:focus {
+  outline: solid 1px #2c6c69;
+  outline-offset: 2px;
+}
+
+cart th {
+  color: #3a3a3a;
+  font-weight: normal;
+  font-size: 0.875em;
+}
+
+cart th,
+cart dt {
+  color: #3a3a3a;
+  font-weight: normal;
+  font-size: 0.875em;
+}
+
+cart dt::after {
+  content: ': ';
+}
+
+/* 
+  ref Tiny CSS Projects 
+  cards in grid layout
+  ENDs
+*/
+/*body {
+  /*font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;*/
+/*body {
+  margin: 0;
+  padding: 0;
+  background: #eee1bd;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #151412;
+}*/
+
+time {
+  font: 700 1.2rem 'Oswald', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+
+  border-top: 3px solid #333333;
+  border-bottom: 3px solid #333333;
+  padding: 12px 0;
+
+  display: block;
+}
+time sup {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+blockquote {
+  font: 1.8rem/1.25 'Oswald', sans-serif;
+  margin: 1.5rem 2rem;
+}
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+
+@counter-style emoji {
+  symbols: '\2615''\1F601';
+  system: cyclic;
+  suffix: ' ';
+}
+
+@media (min-width: 400px) {
+  articlea {
+    column-count: 3;
+    column-rule: 2px solid #333333;
+  }
+  articlea ul {
+    list-style: emoji;
+  }
+}
+
+main {
+  margin: 24px;
+}
+
+/*@media (min-width: 400px) {
+  main {*/
+/*margin: 24px;*/
+/* tiny css projects ch2 */
+/*    display: grid;*/
+/*grid-template-columns: repeat(2, minmax(auto, 1fr)) 150px;*/
+/*grid-template-columns: 125px 350px auto;
+    grid-template-areas:
+      'header  header  header'
+      'content content author'
+      'content content aside '
+      'plays graphics aside '*/
+/*'plays      .    aside '*/
+/*'footer  footer  footer';
+    gap: 10px;
+  }
+}*/
+
+/* tiny css projects ch2 2.7 removing debugging styles
+main > * {
+  border: solid 1px #bfbfbf;
+  padding: 12px;
+}
+ */
+
+main > *,
+section {
+  display: flow-root;
+}
+p,
+ul {
+  line-height: 1.5;
+}
+article p span {
+  display: block;
+}
+article p span:last-of-type,
+article p span:nth-last-child(2) {
+  text-indent: 16px;
+}
+
+/* tiny css projects ch2 */
+header {
+  grid-area: header;
+}
+article {
+  grid-area: content;
+}
+aside {
+  grid-area: aside;
+}
+.author-details {
+  grid-area: author;
+}
+.plays {
+  grid-area: plays;
+}
+footer {
+  grid-area: footer;
+}
+.graphics {
+  grid-area: graphics;
+}
+
+.tabbar {
+  display: flex;
+  flex: row wrap;
+  float: left;
+}
+
+.tab {
+  display: inline=block;
+}
+
+/* tiny css projects ch3 */
+rect:nth-child(1) {
+  fill: #1a9f8c;
+}
+rect:nth-child(2) {
+  fill: #1eab8d;
+}
+rect:nth-child(3) {
+  fill: #20b38e;
+}
+rect:nth-child(4) {
+  fill: #22b78d;
+}
+rect:nth-child(5) {
+  fill: #22b88e;
+}
+rect:nth-child(6) {
+  fill: #21b48d;
+}
+rect:nth-child(7) {
+  fill: #1eaf8e;
+}
+rect:nth-child(8) {
+  fill: #1ca48d;
+}
+rect:nth-child(9) {
+  fill: #17968b;
+}
+rect:nth-child(10) {
+  fill: #128688;
+}
+rect:nth-child(11) {
+  fill: #128688;
+}
+
+h1 {
+  font-family: Lato;
+  color: crimson;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  /*float: left; */
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: 1px;
+  margin-top: -3px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.small-heading {
+  color: darkblue;
+  text-transform: uppercase;
+}
+
+#quote {
+  background-color: aquamarine;
+  color: green;
+  padding: 10px;
+}
+
+.usr-avatar {
+  color: darkblue;
+  text-transform: uppercase;
+}

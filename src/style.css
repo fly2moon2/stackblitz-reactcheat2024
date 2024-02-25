@@ -181,7 +181,7 @@ card > div > a:focus {
   background-image: url('./img/image03.jpg');
 }
 .mountain-view {
-  background-image: url('4.jpg');
+  background-image: url('./img/image03.jpg');
 }
 
 @media (hover: hover) and (min-width: 500px) and (prefers-reduced-motion: no-preference) {
